@@ -69,6 +69,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8871B4611ACDEF0B0081153A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				884C998E1A47D2C200F9E84C /* BlogPost.h */,
+				884C998F1A47D2C200F9E84C /* BlogPost.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8871B4621ACDEF230081153A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				884C998B1A4762F600F9E84C /* TableViewController.h */,
+				884C998C1A4762F600F9E84C /* TableViewController.m */,
+				88A0E6F61A4BAE7E0067223B /* WebViewController.h */,
+				88A0E6F71A4BAE7E0067223B /* WebViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		88F9BCAD1A46C5CA00B5D321 = {
 			isa = PBXGroup;
 			children = (
@@ -92,17 +112,11 @@
 		88F9BCB81A46C5CA00B5D321 /* BlogReader */ = {
 			isa = PBXGroup;
 			children = (
-				88F9BCBD1A46C5CA00B5D321 /* AppDelegate.h */,
-				88F9BCBE1A46C5CA00B5D321 /* AppDelegate.m */,
-				884C998B1A4762F600F9E84C /* TableViewController.h */,
-				884C998C1A4762F600F9E84C /* TableViewController.m */,
-				88A0E6F61A4BAE7E0067223B /* WebViewController.h */,
-				88A0E6F71A4BAE7E0067223B /* WebViewController.m */,
+				8871B4611ACDEF0B0081153A /* Model */,
+				8871B4621ACDEF230081153A /* Controller */,
 				88F9BCDF1A46C69C00B5D321 /* MainStoryboard.storyboard */,
 				88F9BCC61A46C5CA00B5D321 /* Images.xcassets */,
 				88F9BCB91A46C5CA00B5D321 /* Supporting Files */,
-				884C998E1A47D2C200F9E84C /* BlogPost.h */,
-				884C998F1A47D2C200F9E84C /* BlogPost.m */,
 			);
 			path = BlogReader;
 			sourceTree = "<group>";
@@ -110,6 +124,8 @@
 		88F9BCB91A46C5CA00B5D321 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				88F9BCBD1A46C5CA00B5D321 /* AppDelegate.h */,
+				88F9BCBE1A46C5CA00B5D321 /* AppDelegate.m */,
 				88F9BCBA1A46C5CA00B5D321 /* Info.plist */,
 				88F9BCBB1A46C5CA00B5D321 /* main.m */,
 			);

@@ -48,6 +48,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Date format
+
+- (NSString *)dateStringWithDate:(NSDate *)date {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"EEEE, MMM d yyyy 'at' HH:mm"];
+    
+    return [dateFormat stringFromDate:date];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -68,15 +77,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
     BlogPost *blogPost = [self postForIndexPath:indexPath];
     
     cell.textLabel.text = [blogPost title];
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"EEEE, MMM d yyyy 'at' HH:mm"];
-    cell.detailTextLabel.text = [dateFormat stringFromDate:[blogPost date]];
+    cell.detailTextLabel.text = [self dateStringWithDate:[blogPost date]];
     
     if ([blogPost.thumbnail isKindOfClass:[NSString class]]) {
-        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[blogPost thumbnail]]];
+        NSURL *thumbnailURL = [NSURL URLWithString:[blogPost thumbnail]];
+        
+        [cell.imageView sd_setImageWithURL:thumbnailURL placeholderImage:nil options:SDWebImageRefreshCached];
     }
 
     return cell;
